@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b3x4xcomt4kla"]
 
-[ext_resource type="Script" path="res://res/scenes/Signin.cs" id="1_5v0o1"]
+[ext_resource type="Script" path="res://res/scripts/Signin.cs" id="1_5v0o1"]
 
 [node name="SignInUp" type="Control"]
 layout_mode = 3
@@ -16,16 +16,20 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -3.0
+offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 30
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 850
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 700
 alignment = 1
 metadata/_edit_use_anchors_ = true
 
@@ -46,8 +50,8 @@ vertical_alignment = 1
 
 [node name="Username" type="LineEdit" parent="MarginContainer/HBoxContainer/SignIn"]
 layout_mode = 2
-placeholder_text = "Username"
-max_length = 20
+placeholder_text = "Email"
+max_length = 40
 expand_to_text_length = true
 
 [node name="Password" type="LineEdit" parent="MarginContainer/HBoxContainer/SignIn"]
@@ -79,8 +83,8 @@ vertical_alignment = 1
 
 [node name="Username" type="LineEdit" parent="MarginContainer/HBoxContainer/SignUp"]
 layout_mode = 2
-placeholder_text = "Username"
-max_length = 20
+placeholder_text = "Email"
+max_length = 40
 expand_to_text_length = true
 
 [node name="Password" type="LineEdit" parent="MarginContainer/HBoxContainer/SignUp"]
@@ -95,10 +99,18 @@ placeholder_text = "Confirm Password"
 max_length = 20
 expand_to_text_length = true
 
+[node name="UserRite" type="OptionButton" parent="MarginContainer/HBoxContainer/SignUp"]
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "Tridentine"
+popup/item_1/text = "Byzantine"
+popup/item_1/id = 1
+
 [node name="Button" type="Button" parent="MarginContainer/HBoxContainer/SignUp"]
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_font_sizes/font_size = 15
 text = "Sign Up"
 
-[connection signal="pressed" from="MarginContainer/HBoxContainer/SignIn/Button" to="." method="OnSignInButtonPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SignIn/Button" to="." method="_OnSIButtonPressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SignUp/Button" to="." method="_OnSUButtonPressed"]
