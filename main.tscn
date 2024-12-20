@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://de323ea3uf1eh"]
+
+[ext_resource type="Script" path="res://res/scripts/MainScene.gd" id="1_275gx"]
+[ext_resource type="PackedScene" uid="uid://b3x4xcomt4kla" path="res://res/scenes/signin.tscn" id="2_vos0p"]
+
+[node name="MainPage" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_275gx")
+
+[node name="TabBar" type="TabBar" parent="."]
+layout_mode = 0
+offset_top = 606.0
+offset_right = 1152.0
+offset_bottom = 646.0
+current_tab = 0
+tab_count = 6
+tab_0/title = "Home"
+tab_1/title = "Search"
+tab_2/title = "Bible"
+tab_3/title = "Resources"
+tab_4/title = "User"
+tab_5/title = "Sign In / Up"
+
+[node name="SignInUp" parent="." instance=ExtResource("2_vos0p")]
+visible = false
+layout_mode = 1
+
+[node name="MainPagePart" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -42.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="tab_changed" from="TabBar" to="." method="tab_interaction"]

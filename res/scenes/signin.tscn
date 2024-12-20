@@ -1,0 +1,104 @@
+[gd_scene load_steps=2 format=3 uid="uid://b3x4xcomt4kla"]
+
+[ext_resource type="Script" path="res://res/scenes/Signin.cs" id="1_5v0o1"]
+
+[node name="SignInUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5v0o1")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 850
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="SignIn" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/SignIn"]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Sign In"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Username" type="LineEdit" parent="MarginContainer/HBoxContainer/SignIn"]
+layout_mode = 2
+placeholder_text = "Username"
+max_length = 20
+expand_to_text_length = true
+
+[node name="Password" type="LineEdit" parent="MarginContainer/HBoxContainer/SignIn"]
+layout_mode = 2
+placeholder_text = "Password"
+max_length = 20
+expand_to_text_length = true
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/SignIn"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 15
+text = "Sign In"
+
+[node name="SignUp" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/SignUp"]
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 9
+theme_override_constants/shadow_offset_y = 8
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+text = "Sign Up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Username" type="LineEdit" parent="MarginContainer/HBoxContainer/SignUp"]
+layout_mode = 2
+placeholder_text = "Username"
+max_length = 20
+expand_to_text_length = true
+
+[node name="Password" type="LineEdit" parent="MarginContainer/HBoxContainer/SignUp"]
+layout_mode = 2
+placeholder_text = "Password"
+max_length = 20
+expand_to_text_length = true
+
+[node name="ConfPass" type="LineEdit" parent="MarginContainer/HBoxContainer/SignUp"]
+layout_mode = 2
+placeholder_text = "Confirm Password"
+max_length = 20
+expand_to_text_length = true
+
+[node name="Button" type="Button" parent="MarginContainer/HBoxContainer/SignUp"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 15
+text = "Sign Up"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/SignIn/Button" to="." method="OnSignInButtonPressed"]
